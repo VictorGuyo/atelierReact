@@ -46,4 +46,12 @@ body {
 }
 .container .board .button {
   text-align: center;
+}
+.container .boxes img {
+  margin: 25px;
+}
+
+.title img {
+  padding: 0 10px;
+  height: 40px;
 }/*# sourceMappingURL=App.css.map */
