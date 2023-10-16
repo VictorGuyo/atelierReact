@@ -44,9 +44,6 @@ body {
   display: flex;
   justify-content: center;
 }
-.container .board .button {
-  text-align: center;
-}
 .container .boxes img {
   margin: 25px;
 }
@@ -54,4 +51,13 @@ body {
 .title img {
   padding: 0 10px;
   height: 40px;
+}
+
+.nextPlayer {
+  color: white;
+}
+
+.button {
+  color: white;
+  background-color: red;
 }/*# sourceMappingURL=App.css.map */

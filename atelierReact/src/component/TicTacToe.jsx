@@ -7,7 +7,15 @@ const TicTacToe = () => {
   const [count, setCount] = useState(0);
   const [lock, setLock] = useState(false);
 
+  function checkEquality() {
+    if (dataLength === 9 && !checkWin(data)) {
+      titleRef.current.innerHTML = `Mince égalité,<span> 'Reset' pour rejouer!</span>`;
+    }
+  }
+
   const titleRef = useRef(null);
+  const playerRef = useRef(null);
+
   let box1 = [null];
   let box2 = [null];
   let box3 = [null];
@@ -28,14 +36,15 @@ const TicTacToe = () => {
       e.target.innerHTML = `<img src="src/assets/circle.png" alt="O" />`;
       data[exemple] = "o";
       setCount(count + 1);
+      playerRef.current.innerHTML = ` Prochain joueur : X `;
     } else {
       e.target.innerHTML = `<img src="src/assets/cross.png" alt="X" />`;
       data[exemple] = "x";
       setCount(count + 1);
+      playerRef.current.innerHTML = `Prochain joueur : O `;
     }
-    {
-      checkWin(data);
-    }
+    checkWin(data);
+    checkEquality();
   }
 
   const checkWin = () => {
@@ -60,12 +69,14 @@ const TicTacToe = () => {
     }
   };
 
+  const dataLength = data.reduce((acc, str) => acc + str.length, 0);
+
   const reset = () => {
     setLock(false);
     data = ["", "", "", "", "", "", "", "", ""];
     titleRef.current.innerHTML = ` Tic Tac Toe <span>Wild</span>`;
     boxArray.map((e) => {
-      e.current.innerHTML= "";
+      e.current.innerHTML = "";
     });
   };
   const won = (winner) => {
@@ -136,6 +147,7 @@ const TicTacToe = () => {
               onClick={(e) => handleClick(e, 8)}
             ></div>
           </div>
+          <div className="nextPlayer" ref={playerRef}></div>
           <button
             onClick={() => {
               reset();

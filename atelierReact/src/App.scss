@@ -43,16 +43,19 @@ body {
       display: flex;
       justify-content: center;
     }
-    .button {
-      text-align: center;
-    }
   }
   .boxes img {
     margin: 25px;
   }
-  
 }
 .title img {
-    padding: 0 10px;
-    height: 40px;
-  }
+  padding: 0 10px;
+  height: 40px;
+}
+.nextPlayer {
+  color: white;
+}
+.button {
+  color: white;
+  background-color: red;
+}
