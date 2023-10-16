@@ -8,33 +8,44 @@ const TicTacToe = () => {
   const [lock, setLock] = useState(false);
 
   function handleClick(e, exemple) {
-    // if (lock){
-    //     return 0;
-    // }
+    if (lock) {
+      return null;
+    }
     if (count % 2 === 0) {
-        e.target.innerHTML = `<img src="src/assets/circle.png" alt="O" />`
-    data[exemple]="o";
-    setCount(count + 1);
+      e.target.innerHTML = `<img src="src/assets/circle.png" alt="O" />`;
+      data[exemple] = "o";
+      setCount(count + 1);
+    } else {
+      e.target.innerHTML = `<img src="src/assets/cross.png" alt="X" />`;
+      data[exemple] = "x";
+      setCount(count + 1);
     }
+    {
+      checkWin(data);
+    }
+  }
 
-    else {e.target.innerHTML = `<img src="src/assets/cross.png" alt="X" />`
-    data[exemple]="x";
-    setCount(count + 1);
+  const checkWin = () => {
+    if (data[0] === data[1] && data[1] === data[2] && data[2] !== "") {
+      won(data);
+    } else if (data[0] === data[1] && data[1] === data[2] && data[2] !== "") {
+      won(data);
+    } else if (data[3] === data[4] && data[4] === data[5] && data[5] !== "") {
+      won(data);
+    } else if (data[6] === data[7] && data[7] === data[8] && data[8] !== "") {
+      won(data);
+    } else if (data[0] === data[4] && data[4] === data[8] && data[8] !== "") {
+      won(data);
+    } else if (data[2] === data[4] && data[4] === data[6] && data[6] !== "") {
+      won(data);
     }
-    //win=(data);
-    }
-  
-    const checkWin = () => {
-       if (data[0]===data[1] && data[1]===data[2] && data[2]!== "" )
-       return(
-     console.log("test"))
-    }
+  };
 
-    // const win = () =>{
-    //     setLock(true);
-    // }
-    //
-    
+  const won = () => {
+    setLock(true);
+    setTimeout(() => {alert("Won !!!!")}, 500)
+  };
+
   return (
     <>
       <h1 className="title">
