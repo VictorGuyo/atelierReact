@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #202124;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.title {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  span {
+    color: aquamarine;
+  }
+}
+.container {
+  width: 360px;
+  display: flex;
+  justify-content: center;
+
+  .board {
+    width: 100%;
+    height: 100px;
+
+    .row {
+      width: 100%;
+      height: 120px;
+      display: flex;
+    }
+
+    .boxes {
+      width: 33.3333%;
+      height: 100%;
+      background-color: #313237;
+      border: 5px solid #202124;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    .button {
+    text-align: center;
+    }
+  }
+}
