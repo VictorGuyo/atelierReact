@@ -45,7 +45,6 @@ const TicTacToe = () => {
       playerRef.current.innerHTML = `Prochain joueur : O `;
     }
     checkWin(data);
-    checkEquality();
     console.log(data)
     console.log(dataLength)
   }
