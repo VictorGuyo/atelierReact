@@ -34,15 +34,15 @@ const TicTacToe = () => {
       return null;
     }
     if (count % 2 === 0) {
-      e.target.innerHTML = `<img src="src/assets/circle.png" alt="O" />`;
+      e.target.innerHTML = `<img src="src/assets/nassime.jpg" alt="O" />`;
       data[exemple] = "o";
       setCount(count + 1);
-      playerRef.current.innerHTML = ` Prochain joueur : X `;
+      playerRef.current.innerHTML = ` Prochain joueur : David `;
     } else {
-      e.target.innerHTML = `<img src="src/assets/cross.png" alt="X" />`;
+      e.target.innerHTML = `<img src="src/assets/david.jpg" alt="X" />`;
       data[exemple] = "x";
       setCount(count + 1);
-      playerRef.current.innerHTML = `Prochain joueur : O `;
+      playerRef.current.innerHTML = `Prochain joueur : Nassime `;
     }
     checkWin(data);
     console.log(data)
@@ -83,11 +83,11 @@ const TicTacToe = () => {
   };
   const won = (winner) => {
     setLock(true);
-    // setTimeout(() => {alert("Won !!!!")}, 500)
+    
     if (winner === "x") {
-      titleRef.current.innerHTML = `Victoire pour : <img src="src/assets/cross.png"/>`;
+      titleRef.current.innerHTML = `Victoire pour : <img src="src/assets/david.jpg"/>`;
     } else if (winner === "o") {
-      titleRef.current.innerHTML = `Victoire pour : <img src="src/assets/circle.png"/> `;
+      titleRef.current.innerHTML = `Victoire pour : <img src="src/assets/nassime.jpg"/> `;
     }
   };
   
