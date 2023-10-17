@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useRef } from "react";
+// import backArrow from "src/assets/arrow-rotate-left-solid.svg"
 
 let data = ["", "", "", "", "", "", "", "", ""];
 
@@ -45,6 +46,8 @@ const TicTacToe = () => {
     }
     checkWin(data);
     checkEquality();
+    console.log(data)
+    console.log(dataLength)
   }
 
   const checkWin = () => {
@@ -88,12 +91,13 @@ const TicTacToe = () => {
       titleRef.current.innerHTML = `Victoire pour : <img src="src/assets/circle.png"/> `;
     }
   };
-
+  
   return (
     <>
       <h1 className="title" ref={titleRef}>
         Tic Tac Toe <span>Wild</span>
       </h1>
+      {checkEquality()}
       <div className="container">
         <div className="board">
           <div className="row">

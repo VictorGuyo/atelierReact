@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Tilt Neon", sans-serif;
 }
 
 body {
@@ -15,7 +17,7 @@ body {
 .title {
   color: white;
   text-align: center;
-  margin-bottom: 30px;
+  margin: 60px 0 30px;
 }
 .title span {
   color: aquamarine;
@@ -43,6 +45,7 @@ body {
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 .container .boxes img {
   margin: 25px;
@@ -57,7 +60,23 @@ body {
   color: white;
 }
 
-.button {
-  color: white;
-  background-color: red;
+button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px;
+  color: aquamarine;
+  border: 3px solid #313237;
+  background-color: #202124;
+  border-radius: 10px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #202124;
+  background-color: aquamarine;
+}
+
+button, button:hover {
+  transition: all 0.3s;
 }/*# sourceMappingURL=App.css.map */
